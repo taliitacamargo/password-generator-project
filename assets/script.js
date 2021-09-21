@@ -1,33 +1,94 @@
 
+// Assignment Code
 
-function genPassword() {
-var password = document.getElementById ("password");
-var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var passwordLength = 10;
+
+var charString = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklnmopqrstuvwxyz", "0123456789", "~!@#$%^&*()-_=+"];
+
+var userInput = [];
+
 var password = "";
-for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    password += chars.substring(randomNumber, randomNumber +1);
-}
-    document.getElementById("password").value = password;
+
+var generateBtn = document.querySelector("#generate");
+
+var generateBtn2 = document.querySelector ("#copy");
+
+window.onload = function() {
+var imgTag = document.createElement("img");
+document.body.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
+document.getElementById("placehere").appendChild(imgTag);
 }
 
+// #password input
+function writePassword() {
+    password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+}
+
+// length
+function generatePassword() {
+    var characterLength = 0
+    while ((characterLength < 8 || characterLength > 128) || Number.isInteger(characterLength) === false) {
+        characterLength = parseInt(prompt("How many characters would you like your password to be? (8-128)"));
+    }
+
+    var upper = false
+    var lower = false
+    var number = false
+    var symbol = false
+
+    while (!upper && !lower && !number && !symbol) {
+
+        // alerts for special characters/upper/lower case letters and numbers
+        upper = confirm("Click OK to confirm uppercase characters");
+
+        lower = confirm("Click OK to confirm lowercase characters");
+
+        number = confirm("Click OK to confirm numeric characters");
+
+        symbol = confirm("Click OK to confirm special characters (~!@#$%^&*()-_=+)");
+    }
+
+    // values push
+    if (upper) {
+        userInput.push(charString[0]);
+    }
+
+    if (lower) {
+        userInput.push(charString[1])
+    }
+
+    if (number) {
+        userInput.push(charString[2])
+    }
+
+    if (symbol) {
+        userInput.push(charString[3])
+    }
+
+    var password = "";
+
+    // array of characters
+    userInput = userInput.join("").split("");
+
+    for (var i = 0; i < characterLength; i++) {
+       //chooses random characters
+        var index = (Math.floor(Math.random() * userInput.length));
+        password = password + userInput[index]
+    }
+
+    return password
+}
+
+// button click listener
+generateBtn.addEventListener("click", writePassword);
+
+//copy button
 function copyPassword() {
     var copyText = document.getElementById("password");
     copyText.select();
     document.execCommand("copy");
 }
 
-//activities to look at to help -00compound-name-generator
-//activities 28 mini-project (see how its structured)
-//particular function to find useful **strings**
-//var someStr = "123245467578675"
-// someStr [0] -> '1' logs  if using arrays, concat will help you
-//if you wanna use strings this will help 
-//var g1 = "asdwhyfsht"
-//var g2 = " asdadsfdghr"
-//possible = g1 + g2 'asdwhyfshtasdadsfdghr'
-//possible [13]
-
-
-// you can use either forloop or clause or class to select all elements instead of using children
+generateBtn2.addEventListener("click", copyPassword);
