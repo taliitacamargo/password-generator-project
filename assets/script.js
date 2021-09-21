@@ -13,9 +13,9 @@ var generateBtn = document.querySelector("#generate");
 var generateBtn2 = document.querySelector ("#copy");
 
 window.onload = function() {
-var imgTag = document.createElement("img");
-document.body.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
-document.getElementById("placehere").appendChild(imgTag);
+var elem = document.createElement("img");
+document.div.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
+document.getElementById("placehere").appendChild(elem);
 }
 
 // #password input
