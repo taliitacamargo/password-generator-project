@@ -14,7 +14,7 @@ var generateBtn2 = document.querySelector ("#copy");
 
 window.onload = function() {
 var elem = document.createElement("img");
-document.div.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
+document.body.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
 document.getElementById("placehere").appendChild(elem);
 }
 
