@@ -12,11 +12,6 @@ var generateBtn = document.querySelector("#generate");
 
 var generateBtn2 = document.querySelector ("#copy");
 
-window.onload = function() {
-var elem = document.createElement("img");
-document.body.style.backgroundImage = "url('/assets/images/pattern_free.jpg')";
-}
-
 // #password input
 function writePassword() {
     password = generatePassword();
