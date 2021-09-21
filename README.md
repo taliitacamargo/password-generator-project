@@ -5,6 +5,7 @@ User is given alerts to choose criterias for the password being generated.
 User can choose a password that is 8-128 characters long, can contain numbers, capital and lower case letters, as well as symbols. 
 User can also use the button to instantly copy password generated. 
 CSS was used to style the page to make it more presentable to the user. 
+favicon was also added to make it a look a bit better.
 
 
 Deployed URL: https://taliitacamargo.github.io/password-generator-project/index.html  GitHub Repo URL: https://github.com/taliitacamargo/password-generator-project.git
