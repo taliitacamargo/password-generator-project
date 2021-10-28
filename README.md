@@ -16,3 +16,4 @@ Technologies: HTML, CSS, JAVASCRIPT
 
 ![Random Password Generator1](https://user-images.githubusercontent.com/88398240/134248725-11379e0f-397c-4a22-8a26-662ec254f488.jpg)
 
+Contact: taliitacamargo@icloud.com
